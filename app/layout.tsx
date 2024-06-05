@@ -1,6 +1,8 @@
 import { Metadata } from "next"
 import NavBar from "../components/nav-bar"
 
+import "../styles/global.css"
+
 export const metadata: Metadata = {
   title: {
     template: '%s | NextMovies',

@@ -1,7 +1,8 @@
 // "use client"
-// import { useEffect, useState } from "react";
 
-import Link from "next/link";
+import Movie from "../../components/movie";
+
+import styles from '../../styles/home.module.css'
 
 export const metadata = {
     title: 'Home',
@@ -14,21 +15,13 @@ async function getMovies() {
 }
 
 export default async function Page() {
-    await new Promise((resolve) => {
-        setTimeout(resolve, 1000);
-    });
-
     const movies = await getMovies();
 
     return (
-        <ul>
+        <div className={styles.container}>
             { movies.map((movie) => (
-                <li key={movie.id}>
-                    <Link href={`/movies/${movie.id}`}>
-                        {movie.title}
-                    </Link>
-                </li>
+                <Movie { ...movie } />
             )) }
-        </ul>
+        </div>
     );
 }
