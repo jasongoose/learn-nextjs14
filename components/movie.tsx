@@ -2,13 +2,11 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+import { type Movie } from '../types';
+
 import styles from "../styles/movie.module.css"
 
-export interface Props {
-  poster_path: string;
-  title: string;
-  id: number | string;
-}
+interface Props extends Movie {};
 
 export default function Movie({ poster_path, title, id, }: Props) {
   const router = useRouter();
