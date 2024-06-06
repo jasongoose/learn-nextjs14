@@ -17,7 +17,7 @@ export default function Movie({ poster_path, title, id, }: Props) {
   return (
     <div className={styles.movie}>
       <img src={poster_path} alt={title} {...{ onClick }} />
-      <Link href={`/movies/${id}`}>
+      <Link href={`/movies/${id}`} prefetch>
           {title}
       </Link>
     </div>
